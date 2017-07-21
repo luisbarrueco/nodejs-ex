@@ -3,6 +3,5 @@ node('nodejs') {
   openshiftBuild(buildConfig: 'nodejs-ex', showBuildLogs: 'true')
 
   stage 'deploy'
-  input message: 'Do you want to proceed?', ok: 'Proceed'
   openshiftDeploy(deploymentConfig: 'nodejs-ex')
 }
